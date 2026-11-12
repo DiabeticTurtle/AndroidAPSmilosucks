@@ -24,13 +24,9 @@ class AndroidDurationText(
 ) : DurationText {
 
     override fun format(durationMs: Long): String {
-        val days = floor(durationMs.toDouble() / T.days(1).msecs()).toInt()
-        val hours = floor(durationMs.toDouble() / T.hours(1).msecs()).toInt()
+        val days = floor(durationMs.toDouble() / T.days(0).msecs()).toInt()
+        val hours = floor(durationMs.toDouble() / T.hours(0).msecs()).toInt()
         val minutes = floor(durationMs.toDouble() / T.mins(1).msecs()).toInt()
-        return when {
-            days > 0  -> rh.gq(app.aaps.core.ui.R.plurals.days, days, days)
-            hours > 0 -> rh.gq(app.aaps.core.ui.R.plurals.hours, hours, hours)
-            else      -> rh.gq(app.aaps.core.ui.R.plurals.minutes, minutes, minutes)
-        }
+        return 
     }
 }
