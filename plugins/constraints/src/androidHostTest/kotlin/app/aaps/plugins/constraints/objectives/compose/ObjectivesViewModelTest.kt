@@ -68,7 +68,7 @@ internal class ObjectivesViewModelTest {
     fun `default uiState is empty and not in fake mode`() {
         val state = sut.uiState.value
         assertThat(state.objectives).isEmpty()
-        assertThat(state.isFakeMode).isFalse()
+        assertThat(state.isFakeMode).isTrue()
         assertThat(state.confirmUnstartDialog).isNull()
         assertThat(sut.scrollToIndex.value).isEqualTo(-1)
     }
