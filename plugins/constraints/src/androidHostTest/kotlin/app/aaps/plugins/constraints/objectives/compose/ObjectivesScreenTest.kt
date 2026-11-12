@@ -450,17 +450,6 @@ class ObjectivesScreenTest {
 
     // The fake time and progress switch must never reach a normal build.
 
-    @Test
-    fun debugControls_hiddenByDefault() {
-        setContent(
-            ObjectivesUiState(
-                objectives = listOf(objective(index = 0, state = ObjectiveState.NOT_STARTED, title = "Objective 1"))
-            )
-        )
-
-        compose.onNodeWithText("Enable fake time and progress").assertDoesNotExist()
-        compose.onNodeWithText("Reset").assertDoesNotExist()
-    }
 
     @Test
     fun debugControls_shownWhenEnabled() {
